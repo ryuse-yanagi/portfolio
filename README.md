@@ -1,12 +1,11 @@
 # Portfolio
 
-クラウドエンジニアとしての経歴、実務経験、技術スタック、個人開発プロジェクトを紹介するポートフォリオサイトです。
+これまでの実務経験や技術的な取り組み、個人開発プロジェクトを通じて、  
+クラウドエンジニアを目指す自身のスキルや知識を紹介するポートフォリオサイトです。
 
 ## 公開URL
 
 https://ryuse-yanagi.github.io/portfolio/
-
-※ GitHub Pagesへのデプロイ後に公開予定。
 
 ## コンテンツ
 
@@ -30,23 +29,20 @@ https://ryuse-yanagi.github.io/portfolio/
 
 ## 技術スタック
 
-| 分類      | 技術              |
-| ------- | --------------- |
-| フレームワーク | Nuxt 4          |
-| フロントエンド | Vue 3           |
-| 言語      | TypeScript      |
-| スタイリング  | CSS             |
-| アイコン    | lucide-vue-next |
-| パッケージ管理 | npm             |
-| ホスティング  | GitHub Pages    |
-| CI/CD   | GitHub Actions  |
+| 分類| 技術 |
+| --- | --- |
+| フロントエンド | Nuxt 4 / Vue 3 / TypeScript |
+| アイコン | lucide-vue-next |
+| パッケージ管理 | npm |
+| ホスティング | GitHub Pages |
+| CI/CD | GitHub Actions |
 
 ## 開発環境
 
-| 項目      | バージョン   |
-| ------- | ------- |
-| Node.js | 22.22.2 |
-| npm     | 10.9.7  |
+| 項目 | バージョン |
+| --- | --- |
+| Node.js | 22.23.3 |
+| npm | 10.9.9 |
 
 ## ローカル環境構築
 
@@ -70,8 +66,6 @@ npm run dev
 ```
 
 ## デプロイ
-
-GitHub Actionsを利用して、GitHub Pagesへの自動デプロイを行います。
 
 | 項目 | 内容 |
 | --- | --- |
