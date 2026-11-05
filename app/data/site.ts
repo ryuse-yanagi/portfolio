@@ -33,7 +33,7 @@ export type ExperienceGroup = {
 }
 
 export const basicInfoRows: InfoRow[] = [
-  { label: '名前', value: 'ryuse-yanagi' },
+  { label: '名前', value: 'Ninomiya' },
   { label: '志望職種', value: 'クラウドエンジニア' },
   { label: '目指すキャリア', value: 'クラウドの設計・構築経験を積み、将来的にはクラウドアーキテクトを目指しています。' },
   { label: '学習中の資格', value: 'AWS Certified Solutions Architect - Professional（SAP）' },
