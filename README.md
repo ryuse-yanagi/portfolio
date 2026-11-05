@@ -1,75 +1,82 @@
-# Nuxt Minimal Starter
+# Portfolio
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+クラウドエンジニアとしての経歴、実務経験、技術スタック、個人開発プロジェクトを紹介するポートフォリオサイトです。
 
-## Setup
+## 公開URL
 
-Make sure to install dependencies:
+https://ryuse-yanagi.github.io/portfolio/
+
+※ GitHub Pagesへのデプロイ後に公開予定。
+
+## コンテンツ
+
+### トップページ
+
+* 基本情報
+* 自己紹介
+* 経歴
+* 実務経験
+* 技術スタック
+* プロジェクト一覧
+
+### プロジェクト詳細ページ
+
+* 概要
+* 主要機能
+* 技術スタック
+* システムアーキテクチャ
+* 開発で取り組んだこと
+* GitHub
+
+## 技術スタック
+
+| 分類      | 技術              |
+| ------- | --------------- |
+| フレームワーク | Nuxt 4          |
+| フロントエンド | Vue 3           |
+| 言語      | TypeScript      |
+| スタイリング  | CSS             |
+| アイコン    | lucide-vue-next |
+| パッケージ管理 | npm             |
+| ホスティング  | GitHub Pages    |
+| CI/CD   | GitHub Actions  |
+
+## 開発環境
+
+| 項目      | バージョン   |
+| ------- | ------- |
+| Node.js | 22.22.2 |
+| npm     | 10.9.7  |
+
+## ローカル環境構築
+
+### 1. リポジトリのクローン
 
 ```bash
-# npm
+git clone git@github.com:ryuse-yanagi/portfolio.git
+cd portfolio
+```
+
+### 2. 依存関係のインストール
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+### 3. 開発サーバーの起動
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## デプロイ
 
-Build the application for production:
+GitHub Actionsを利用して、GitHub Pagesへの自動デプロイを行います。
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+| 項目 | 内容 |
+| --- | --- |
+| デプロイ先 | GitHub Pages |
+| トリガー | `main` ブランチへのプッシュ |
+| ビルド | `npx nuxt generate` |
+| 公開ファイル | `.output/public` |
+| 手動実行 | GitHub Actionsから実行可能 |
