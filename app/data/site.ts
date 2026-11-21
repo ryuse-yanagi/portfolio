@@ -10,7 +10,7 @@ export type DesignPoint = {
 
 export type SecurityRow = {
   category: string
-  implementation: string
+  implementations: string[]
 }
 
 export type StackRow = {
@@ -37,13 +37,19 @@ export type ExperienceGroup = {
 
 export const basicInfoRows: InfoRow[] = [
   { label: '名前', value: 'Ninomiya' },
-  { label: '志望職種', value: 'クラウド領域のITコンサル' },
-  { label: '目指すキャリア', value: 'クラウド技術と業務理解の両面から顧客の課題を捉え、要件整理・技術選定・設計・導入まで一貫して支援できるITコンサルタントを目指しています。' },
+  { label: '志望職種', value: 'クラウド領域の IT コンサル' },
+  {
+    label:
+      '目指すキャリア',
+    value:
+      `クラウド技術と業務理解の両面から顧客の課題を捉え、
+      要件整理・技術選定・設計・導入まで一貫して支援できる IT コンサルタントを目指しています。`
+  },
   { label: '学習中の資格', value: 'AWS Certified Solutions Architect - Professional（SAP）' },
 ]
 
 export const introductionParagraphs: string[] = [
-  'Laravel・Vue.js・Nuxt を用いた Web アプリケーション開発に携わってきました。業務では、AWS サービスを活用した非同期処理やAI機能、リアルタイム通知などの実装を経験しています。また、個人開発では AWS 環境の構築からアプリケーションのデプロイまで一貫して取り組み、Terraform によるインフラの IaC 化や GitHub Actions を用いた CI / CD パイプラインの構築も行いました。',
+  'Laravel・Vue.js・Nuxt を用いた Web アプリケーション開発に携わってきました。業務では、AWS サービスを活用した非同期処理や AI 機能、リアルタイム通知などの実装を経験しています。また、個人開発では AWS 環境の構築からアプリケーションのデプロイまで一貫して取り組み、Terraform によるインフラの IaC 化や GitHub Actions を用いた CI / CD パイプラインの構築も行いました。',
   'こうした経験に加え、AWS 認定資格の学習を通じて、システムの要件に応じたクラウドサービスの選定やアーキテクチャ設計に関心を深め、クラウド技術を専門領域にしたいと考えるようになりました。',
   '今後は、クラウド技術に関する専門性を高めるとともに、顧客の課題や要件を理解し、技術的な観点から最適な解決策を提案・実現できる IT コンサルタントを目指しています。',
 ]
@@ -133,11 +139,11 @@ export const projects: Project[] = [
     name: 'WorkMana',
     summary: [
       'WorkManaは、チーム単位でタスクや資料を一元管理するWebアプリケーションです。',
-      'ボード形式とWBS形式を切り替えながら、タスクの進捗を管理できます。',
+      'Board 形式と WBS 形式を切り替えながら、タスクの進捗を管理できます。',
     ],
     overview: [
       'WorkManaは、スペース単位でタスクや資料を一元管理するWebアプリケーションです。ユーザーが作成した組織内にスペースを設けて業務を管理します。',
-      'スペースでは、タスクをカンバン形式のボードと、階層構造で表示するWBSの２つのビューで扱えます。WBSではガントチャートも表示でき、タスクの構造とスケジュールを確認できます。タスクの情報は両方のビューで共有されるため、表示を切り替えても同じタスクを編集できます。',
+      'スペースでは、タスクをカンバン形式の Board と、階層構造で表示する WBS の２つのビューで扱えます。WBS ではガントチャートも表示でき、タスクの構造とスケジュールを確認できます。タスクの情報は両方のビューで共有されるため、表示を切り替えても同じタスクを編集できます。',
       'また、タスクには担当者、ラベル、期間、工数、進捗率などを設定でき、チェックリストやファイル添付にも対応しています。スペースには資料を作成でき、業務管理に必要な情報をまとめて管理できます。',
       '組織内では管理者と一般ユーザーの役割を設け、組織設定やユーザー管理などの操作を管理者に限定しています。さらに、同じスペースを開いているユーザーの画面にタスクや資料の変更をリアルタイムに反映する仕組みや、担当者追加や期間変更などを知らせる通知機能を備えています。',
     ],
@@ -222,7 +228,7 @@ export const projects: Project[] = [
     stackRows: [
       { category: 'フロントエンド', technologies: 'Nuxt 4 / Vue 3 / TypeScript / SCSS' },
       { category: 'バックエンド', technologies: 'Laravel 13 / PHP 8.3' },
-      { category: 'データベース', technologies: 'PostgreSQL / Amazon RDS for PostgreSQL' },
+      { category: 'データベース', technologies: 'Amazon RDS for PostgreSQL' },
       { category: '認証', technologies: 'Amazon Cognito' },
       { category: 'リアルタイム同期', technologies: 'Laravel Reverb / Laravel Echo / Pusher JS' },
       { category: '実行環境', technologies: 'Node.js 22 / nginx / PHP-FPM' },
@@ -261,9 +267,9 @@ export const projects: Project[] = [
           {
             content:
               `ALB で HTTPS 通信を受け付け、
-              HTTP 通信を HTTPS にリダイレクト`,
+              HTTP 通信は HTTPS にリダイレクト`,
             reason: 
-              `通信を暗号化することで
+              `通信を暗号化して
               安全にアプリケーションへアクセスできるようにするため`,
           },
         ],
@@ -305,8 +311,8 @@ export const projects: Project[] = [
           {
             content: `S3 による画像・添付ファイルの管理`,
             reason: 
-              `アプリケーションのデータベースとファイルを
-              分離して管理するため`,
+              `画像および添付ファイルを
+              データベースとは分離して管理するため`,
           },
         ],
       },
@@ -331,7 +337,9 @@ export const projects: Project[] = [
         item: 'セキュリティ',
         rows: [
           {
-            content: 'HTTPS 通信による通信経路の暗号化',
+            content: 
+              `HTTPS 通信による
+              インターネット経由の通信暗号化`,
             reason: '通信内容の盗聴や改ざんを防ぐため',
           },
           {
@@ -339,8 +347,8 @@ export const projects: Project[] = [
               `IAM ロールによる
               AWS リソースへのアクセス制御`,
             reason: 
-              `AWS リソースへのアクセス権限を
-              必要最小限に制限するため`,
+              `必要な AWS リソースへのアクセス権限を付与して
+              認証情報を直接管理する必要をなくすため`,
           },
           {
             content: `Secrets Manager によるシークレット管理`,
@@ -361,11 +369,9 @@ export const projects: Project[] = [
         rows: [
           {
             content: 
-              `Laravel Reverb による
-              WebSocket 通信`,
+              `Laravel Reverb による WebSocket 通信`,
             reason: 
-              `ユーザー間でタスクなどの更新情報を
-              リアルタイムに共有するため`,
+              `ユーザー間で更新情報をリアルタイムに共有するため`,
           },
         ],
       },
@@ -410,7 +416,7 @@ export const projects: Project[] = [
           {
             content: 'S3 のバージョニング',
             reason: 
-              `ファイルの上書き・削除が発生した場合に
+              `画像および添付ファイルの上書き・削除が発生した場合に
               過去のバージョンを復元できるようにするため`,
           },
         ],
@@ -419,34 +425,38 @@ export const projects: Project[] = [
     securityRows: [
       {
         category: '認証・セッション管理',
-        implementation: 
-          `● Amazon Cognito によるユーザー認証
-          ● Authorization Code Flow with PKCE による認証フローの保護
-          ● ID トークンの署名・クレーム検証
-          ● HttpOnly Cookie を利用したセッション管理
-          ● ログアウト時のトークン・セッション無効化`
+        implementations: [
+          'Amazon Cognito によるユーザー認証',
+          'Authorization Code Flow with PKCE による認証フローの保護',
+          'ID トークンの署名・クレーム検証',
+          'HttpOnly Cookie を利用したセッション管理',
+          'ログアウト時のトークン・セッション無効化',
+        ],
       },
       {
         category: '認可・マルチテナント分離',
-        implementation: 
-          `● 組織への所属確認に基づくアクセス制御
-          ● 組織およびスペース単位でのリソースアクセス制御
-          ● 担当者・ラベル・親子タスクなどの関連データの整合性検証
-          ● 管理操作に対する権限確認`
+        implementations: [
+          '組織への所属確認に基づくアクセス制御',
+          '組織およびスペース単位でのリソースアクセス制御',
+          '担当者・ラベル・親子タスクなどの関連データの整合性検証',
+          '管理操作に対する権限確認',
+        ],
       },
       {
         category: '通信・本番設定の保護',
-        implementation: 
-          `● HTTPS・Cookie・CORS などの本番環境向け設定の検証
-          ● 本番環境での認証バイパス無効化チェック`
+        implementations: [
+          'HTTPS・Cookie・CORS などの本番環境向け設定の検証',
+          '本番環境での認証バイパス無効化チェック',
+        ],
       },
       {
         category: 'ファイル保護',
-        implementation:
-          `● Amazon S3 でのファイル保存
-          ● アクセス権限の検証
-          ● アップロード時のファイルサイズ・拡張子の制限
-          ● ダウンロード時のレスポンスヘッダーによる保護`
+        implementations: [
+          'Amazon S3 でのファイル保存',
+          'アクセス権限の検証',
+          'アップロード時のファイルサイズ・拡張子の制限',
+          'ダウンロード時のレスポンスヘッダーによる保護',
+        ],
       },
     ],
     developmentEfforts: [

@@ -121,7 +121,10 @@ useSeoMeta({
             </tr>
           </thead>
           <tbody>
-            <template v-for="point in project.designPoints" :key="point.item">
+            <template
+              v-for="(point, pointIndex) in project.designPoints"
+              :key="point.item"
+            >
               <tr
                 v-for="(row, rowIndex) in point.rows"
                 :key="`${point.item}-${rowIndex}`"
@@ -129,6 +132,7 @@ useSeoMeta({
                 <th
                   v-if="rowIndex === 0"
                   class="feature-name"
+                  :class="{ 'is-last-group': pointIndex === project.designPoints.length - 1 }"
                   scope="rowgroup"
                   :rowspan="point.rows.length"
                 >
@@ -142,21 +146,44 @@ useSeoMeta({
         </table>
       </div>
       <div class="subsection">
-        <h3 id="design-points-heading">セキュリティ設計</h3>
-        <table class="stack-table">
-        <thead>
-          <tr>
-            <th scope="col">分類</th>
-            <th scope="col">内容</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="row in project.securityRows" :key="row.category">
-            <th scope="row">{{ row.category }}</th>
-            <td>{{ row.implementation }}</td>
-          </tr>
-        </tbody>
-      </table>
+        <h3 id="security-design-heading">セキュリティ設計</h3>
+        <table
+          class="stack-table security-design-table"
+          aria-labelledby="security-design-heading"
+        >
+          <colgroup>
+            <col class="category-col" />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">分類</th>
+              <th scope="col">内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template
+              v-for="(group, groupIndex) in project.securityRows"
+              :key="group.category"
+            >
+              <tr
+                v-for="(implementation, index) in group.implementations"
+                :key="`${group.category}-${index}`"
+              >
+                <th
+                  v-if="index === 0"
+                  class="feature-name"
+                  :class="{ 'is-last-group': groupIndex === project.securityRows.length - 1 }"
+                  scope="rowgroup"
+                  :rowspan="group.implementations.length"
+                >
+                  {{ group.category }}
+                </th>
+                <td>{{ implementation }}</td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
       </div>
     </section>
 

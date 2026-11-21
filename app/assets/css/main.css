@@ -425,6 +425,19 @@ p {
   white-space: pre-line;
 }
 
+.stack-table tbody tr:last-child th,
+.stack-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.stack-table tbody th.is-last-group{
+  border-bottom: 0;
+}
+
+.stack-table.design-points-table tbody th.is-last-group {
+  border-bottom: 0;
+}
+
 .stack-table thead th {
   background: #dceeff;
   font-size: 1rem;
@@ -502,7 +515,6 @@ p {
 .career-table td:nth-child(-n + 2) {
   white-space: nowrap;
 }
-
 
 .repo-link {
   font-weight: 600;
