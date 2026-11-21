@@ -104,18 +104,40 @@ useSeoMeta({
       />
       <div class="subsection">
         <h3 id="design-points-heading">設計上のポイント</h3>
-        <table class="stack-table" aria-labelledby="design-points-heading">
+        <table
+          class="stack-table design-points-table"
+          aria-labelledby="design-points-heading"
+        >
+          <colgroup>
+            <col class="category-col" />
+            <col class="content-col" />
+            <col class="reason-col" />
+          </colgroup>
           <thead>
             <tr>
               <th scope="col">分類</th>
-              <th scope="col">内容</th>
+              <th scope="col">設計内容</th>
+              <th scope="col">設計理由</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="point in project.designPoints" :key="point.item">
-              <th scope="row">{{ point.item }}</th>
-              <td>{{ point.content }}</td>
-            </tr>
+            <template v-for="point in project.designPoints" :key="point.item">
+              <tr
+                v-for="(row, rowIndex) in point.rows"
+                :key="`${point.item}-${rowIndex}`"
+              >
+                <th
+                  v-if="rowIndex === 0"
+                  class="feature-name"
+                  scope="rowgroup"
+                  :rowspan="point.rows.length"
+                >
+                  {{ point.item }}
+                </th>
+                <td>{{ row.content }}</td>
+                <td>{{ row.reason }}</td>
+              </tr>
+            </template>
           </tbody>
         </table>
       </div>
