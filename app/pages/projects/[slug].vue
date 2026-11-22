@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ExternalLink }from 'lucide-vue-next'
+import { ExternalLink } from 'lucide-vue-next'
 import { findProject } from '~/data/site'
 
 const route = useRoute()
@@ -43,37 +43,39 @@ useSeoMeta({
 
     <section class="detail-block" aria-labelledby="features-heading">
       <h2 id="features-heading">【主要機能】</h2>
-      <table class="stack-table feature-table">
-        <colgroup>
-          <col class="feature-col" />
-          <col class="item-col" />
-          <col />
-        </colgroup>
-        <thead>
-          <tr>
-            <th scope="col">機能</th>
-            <th scope="col">分類</th>
-            <th scope="col">内容</th>
-          </tr>
-        </thead>
-        <tbody>
-          <template v-for="(feature, featureIndex) in project.features" :key="feature.title">
-            <tr v-for="(item, itemIndex) in feature.items" :key="`${feature.title}-${item.name}`">
-              <th
-                v-if="itemIndex === 0"
-                class="feature-name"
-                :class="{ 'is-last-group': featureIndex === project.features.length - 1 }"
-                scope="rowgroup"
-                :rowspan="feature.items.length"
-              >
-                {{ feature.title }}
-              </th>
-              <th class="feature-item" scope="row">{{ item.name }}</th>
-              <td>{{ item.description }}</td>
+      <div class="table-scroll">
+        <table class="stack-table feature-table">
+          <colgroup>
+            <col class="feature-col" />
+            <col class="item-col" />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">機能</th>
+              <th scope="col">分類</th>
+              <th scope="col">内容</th>
             </tr>
-          </template>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <template v-for="(feature, featureIndex) in project.features" :key="feature.title">
+              <tr v-for="(item, itemIndex) in feature.items" :key="`${feature.title}-${item.name}`">
+                <th
+                  v-if="itemIndex === 0"
+                  class="feature-name"
+                  :class="{ 'is-last-group': featureIndex === project.features.length - 1 }"
+                  scope="rowgroup"
+                  :rowspan="feature.items.length"
+                >
+                  {{ feature.title }}
+                </th>
+                <th class="feature-item" scope="row">{{ item.name }}</th>
+                <td>{{ item.description }}</td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="detail-block" aria-labelledby="stack-heading">
@@ -104,47 +106,50 @@ useSeoMeta({
       />
       <div class="subsection">
         <h3 id="design-points-heading">設計上のポイント</h3>
-        <table
-          class="stack-table design-points-table"
-          aria-labelledby="design-points-heading"
-        >
-          <colgroup>
-            <col class="category-col" />
-            <col class="content-col" />
-            <col class="reason-col" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th scope="col">分類</th>
-              <th scope="col">設計内容</th>
-              <th scope="col">設計理由</th>
-            </tr>
-          </thead>
-          <tbody>
-            <template
-              v-for="(point, pointIndex) in project.designPoints"
-              :key="point.item"
-            >
-              <tr
-                v-for="(row, rowIndex) in point.rows"
-                :key="`${point.item}-${rowIndex}`"
-              >
-                <th
-                  v-if="rowIndex === 0"
-                  class="feature-name"
-                  :class="{ 'is-last-group': pointIndex === project.designPoints.length - 1 }"
-                  scope="rowgroup"
-                  :rowspan="point.rows.length"
-                >
-                  {{ point.item }}
-                </th>
-                <td>{{ row.content }}</td>
-                <td>{{ row.reason }}</td>
+        <div class="table-scroll">
+          <table
+            class="stack-table design-points-table"
+            aria-labelledby="design-points-heading"
+          >
+            <colgroup>
+              <col class="category-col" />
+              <col class="content-col" />
+              <col class="reason-col" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">分類</th>
+                <th scope="col">設計内容</th>
+                <th scope="col">設計理由</th>
               </tr>
-            </template>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <template
+                v-for="(point, pointIndex) in project.designPoints"
+                :key="point.item"
+              >
+                <tr
+                  v-for="(row, rowIndex) in point.rows"
+                  :key="`${point.item}-${rowIndex}`"
+                >
+                  <th
+                    v-if="rowIndex === 0"
+                    class="feature-name"
+                    :class="{ 'is-last-group': pointIndex === project.designPoints.length - 1 }"
+                    scope="rowgroup"
+                    :rowspan="point.rows.length"
+                  >
+                    {{ point.item }}
+                  </th>
+                  <td>{{ row.content }}</td>
+                  <td>{{ row.reason }}</td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
       </div>
+
       <div class="subsection">
         <h3 id="security-design-heading">セキュリティ設計</h3>
         <table

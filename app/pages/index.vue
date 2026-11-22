@@ -42,27 +42,29 @@ useSeoMeta({
 
     <section class="home-section" aria-labelledby="career-heading">
       <h2 id="career-heading">【経歴】</h2>
-      <table class="stack-table career-table">
-        <colgroup>
-          <col class="career-period" />
-          <col class="career-category" />
-          <col />
-        </colgroup>
-        <thead>
-          <tr>
-            <th scope="col">期間</th>
-            <th scope="col">区分</th>
-            <th scope="col">内容</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="row in careerRows" :key="`${row.period}-${row.category}`">
-            <td>{{ row.period }}</td>
-            <td>{{ row.category }}</td>
-            <td>{{ row.detail }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-scroll">
+        <table class="stack-table career-table">
+          <colgroup>
+            <col class="career-period" />
+            <col class="career-category" />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">期間</th>
+              <th scope="col">区分</th>
+              <th scope="col">内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="row in careerRows" :key="`${row.period}-${row.category}`">
+              <td>{{ row.period }}</td>
+              <td>{{ row.category }}</td>
+              <td>{{ row.detail }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="home-section" aria-labelledby="experience-heading">
