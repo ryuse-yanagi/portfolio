@@ -37,7 +37,7 @@ export type ExperienceGroup = {
 
 export const basicInfoRows: InfoRow[] = [
   { label: '名前', value: 'Ninomiya' },
-  { label: '志望職種', value: 'IT コンサル' },
+  { label: '志望職種', value: 'IT コンサルタント' },
   {
     label:
       '目指すキャリア',
