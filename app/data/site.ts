@@ -57,7 +57,7 @@ export const introductionParagraphs: string[] = [
 export const careerRows: CareerRow[] = [
   { period: '2025年06月～2025年12月', category: 'プログラミングスクール', detail: 'Laravel によるバックエンド開発を中心に、Web アプリケーション開発の基礎を習得。' },
   { period: '2026年02月～2026年05月', category: '業務委託', detail: '既存アプリケーションの機能追加を担当。Laravel によるバックエンド・データベースの実装、Vue.js・Nuxt によるフロントエンドの実装に加え、AWS サービスを利用した非同期処理や AI 要約などの機能実装を経験。' },
-  { period: '2026年06月～2026年11月', category: '個人開発', detail: '業務管理 Web アプリケーション「WorkMana」を開発。Nuxt・Laravel・PostgreSQL を用いたアプリケーション開発に加え、AWS を利用したインフラ構築・デプロイを実施。Terraform による IaC 化や GitHub Actions を用いた CI / CD パイプラインの構築にも取り組み、インフラ構成管理とデプロイプロセスの自動化を実現。' },
+  { period: '2026年05月～2026年11月', category: '個人開発', detail: '業務管理 Web アプリケーション「WorkMana」を開発。Nuxt・Laravel・PostgreSQL を用いたアプリケーション開発に加え、AWS を利用したインフラ構築・デプロイを実施。Terraform による IaC 化や GitHub Actions を用いた CI / CD パイプラインの構築にも取り組み、インフラ構成管理とデプロイプロセスの自動化を実現。' },
 ]
 
 export const experienceGroups: ExperienceGroup[] = [
